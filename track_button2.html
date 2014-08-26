@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>TTX</title>
-
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <!--META HTTP-EQUIV="refresh" CONTENT="15"-->
 <A HREF="javascript:history.go(0)"> </A>
 
@@ -38,10 +38,28 @@
     .space {
       height: 30px;
     }
+
+    .highlight {
+      border-color: yellow;
+    }
+
+   
   </style>
 
-  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script>
+
+$(window).load(function(){
+$(".button").click(function() {
+    if ($(this).hasClass('highlight')) {
+  $(this).removeClass('highlight');
+} else {
+  
+  $(this).addClass('highlight');
+  }
+   });
+
+});
+
 //declare global variables
 var thegame;
 thegame = new mygame;
@@ -263,6 +281,8 @@ function ajaxServiceLayer(){
   
 }
 </script>
+
+
 </head>
 
 
@@ -281,11 +301,13 @@ function ajaxServiceLayer(){
       </ul>
   </div>
 
-  <img src="Logo.png"alt="TTX Logo" height="100px"width="150px">
+  <img src="http://www.ttx.com/Libraries/Main_Gallery/TTXLOGOr_4c_RSG.sflb.ashx" alt="TTX Logo" height="30px"width="85px">
+
   <form>
              <input type="text" placeholder="Search..." required>
             <input type="button" value="Search">
 </form>
+<button id="move">Move</button>
   <div id="yard" align="center"></div>
    <div id="track"></div>
    <div id="unit"></div>
